@@ -1,12 +1,57 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url(img/BG.jpg);
+    
 }
 
 .section{
-    width: 800px;
+    width: 100vw;
+    height: 100vh;
     margin: 0 auto;
+    background-size: cover;
+    background-image: url(img/BG.jpg);
+}
+
+.bg-form img{
+    max-width: 100%;
+}
+
+.section-2{
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    background-image: url(img/section2Img.jpg);
+    background-size: cover;
+
+}
+
+.mini-section{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 2%;
+}
+
+.carte img{
+    max-width: 100%;
+}
+
+
+.carte{
+    background-color: rgba(245, 245, 245, 0.479);
+    height: 350px;
+    width: 325px;
+}
+
+.reveal{
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+.reveal-visible{
+    opacity: 1;
+    transform: translateY(-0);
+    transition: 2s cubic-bezier(.5,0,0,1);
 }
 
 .logo{
@@ -15,13 +60,10 @@ body{
 }
 
 .bg-form{
-    width: 700px;
+    width: 500px;
     margin: 0 auto;
 }
 
-img{
-    max-width: 100%;
-}
 
 h3{
     box-sizing: border-box;
@@ -40,13 +82,13 @@ span.fade{
 .formulaire{
     text-align: center;
     position: absolute;
-    bottom: 30%;
-    left: 40%;
+    bottom: 35%;
+    left: 43%;
 }
 
 label{
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 input[type=text] {

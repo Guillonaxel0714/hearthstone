@@ -31,6 +31,8 @@ $.ajax(settings).done(function (response) {
 
 
 
+// animation de titre
+
 const text = document.querySelector(".fancy");
 const strText = text.textContent;
 const splitText = strText.split("");
@@ -56,3 +58,30 @@ function complete(){
     clearInterval(timer);
     timer = null;
 }
+
+
+
+// animation au scroll
+
+const ratio = .1
+const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: ratio
+}
+
+const handleIntersect = function(entries, observer){
+    entries.forEach(function(entry){
+        if(entry.intersectionRatio > ratio){
+            entry.target.classList.add('reveal-visible')
+            observer.unobserve(entry.target)
+        }else{
+
+        }
+    })
+}
+
+const observer = new IntersectionObserver(handleIntersect, options)
+document.querySelectorAll('.reveal').forEach(function(r){
+    observer.observe(r)
+})
