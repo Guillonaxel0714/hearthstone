@@ -4,58 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     
-
-
 </head>
 <body>
-    <label for="Nom">Nom de la carte :</label>
-    <form>
-        <input type="text" id="input" name="input"><br>
-        <input type="button" id="bouton" value="Contrôler" onclick="controle()">
-        </form>
-    
+
+    <section class="section">
+        <div class="logo">
+            <img src="img/logo.png" alt="logo hearthstone">
+        </div>
+
+        <div class="bg-form">
+            <img src="img/maxresdefault.jpg">
+        </div>
+            <div class="formulaire">
+                <label for="Nom"><h3 class="fancy">Nom de la carte :</h3></label><br>
+                <form>
+                    <input type="text" id="input" name="input"><br>
+                    <input type="button" id="bouton" value="Rechercher" onclick="controle()">
+                </form>
+            </div>
+    </section>
+
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript">
-
-    
-    function controle(){
-
-
-   
-
-
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/" + document.getElementById("input").value,
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com",
-                "x-rapidapi-key": "e4f7e7645bmshfcf4b4dbd194897p1f0e4djsnfd5aeb1a55fa"
-            }
-        }
-        var vari = document.getElementById("input").value;
-
-    $.ajax(settings).done(function (response) {
-
-
-
-        document.write('<h2><b>'+ response[0].name + '</b></h2><br>')
-
-        var img = new Image();
-        if (response[1] === undefined) {
-        img.src = response[0].img;
-        } else {
-            img.src = response[1].img;
-        }
-        document.body.appendChild(img);
-
-        document.write('<input type="button" value="Retour" onclick=window.location.href="index.html";>')  
-
-    })};
-</script>
+<script type="text/javascript" src="main.js"></script>
 
 </body>
 </html>
+
+
+
+    
