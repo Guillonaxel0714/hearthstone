@@ -1,5 +1,9 @@
 function controle(){
 
+
+   
+
+
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -14,6 +18,8 @@ function controle(){
 
 $.ajax(settings).done(function (response) {
 
+
+
     document.write('<h2><b>'+ response[0].name + '</b></h2><br>')
 
     var img = new Image();
@@ -22,10 +28,30 @@ $.ajax(settings).done(function (response) {
     } else {
         img.src = response[1].img;
     }
+
     document.body.appendChild(img);
+    document.write('<h2><b>Caractéristiques :</b></h2><br>') 
+    if (response[0].attack === undefined){
+    document.write('<p>Attaque : ' + response[1].attack + '</p>');
+    } else {
+    document.write('<p>Attaque : ' + response[0].attack + '</p>');
+    }
 
-    document.write('<input type="button" value="Retour" onclick=window.location.href="index.html";>')  
+    if (response[0].health === undefined){
+        document.write('<p>HP : ' + response[1].health + '</p>');
+        } else {
+        document.write('<p>HP : ' + response[0].health + '</p>');
+        }
 
+
+    if (response[0].cost === undefined){
+        document.write('<p>Mana : ' + response[1].cost + '</p>');
+        } else {
+        document.write('<p>Mana : ' + response[0].cost + '</p>');
+        }
+
+
+    document.write('<br><input type="button" value="Retour" onclick=window.location.href="index.html";>')  
 })};
 
 
