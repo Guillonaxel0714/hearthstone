@@ -1,4 +1,5 @@
-body{
+*, ::before, ::after{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     
@@ -7,7 +8,6 @@ body{
 .section{
     width: 100vw;
     height: 100vh;
-    margin: 0 auto;
     background-size: cover;
     background-image: url(img/BG.jpg);
 }
@@ -19,13 +19,19 @@ body{
 .section-2{
     width: 100vw;
     height: 100vh;
-    margin: 0 auto;
     background-image: url(img/section2Img.jpg);
     background-size: cover;
-
 }
 
-.mini-section{
+.section-3{
+    width: 100vw;
+    height: 100vh;
+    padding-top: 5%;
+    background-size: cover;
+    background-image: url(img/BG.jpg);
+}
+
+[class*="mini-section-"]{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -43,15 +49,23 @@ body{
     width: 325px;
 }
 
-.reveal{
+[class*="reveal-"]{
     opacity: 0;
     transform: translateY(-30px);
 }
 
+.reveal-2{
+    transition-delay: .1s!important;
+}
+ 
+.reveal-3{
+    transition-delay: .2s!important;
+}
+
 .reveal-visible{
     opacity: 1;
-    transform: translateY(-0);
-    transition: 2s cubic-bezier(.5,0,0,1);
+    transform: translateY(0);
+    transition: 1s cubic-bezier(.5,0,0,1);
 }
 
 .logo{
@@ -128,4 +142,60 @@ input[type=text] {
         #981cb4);
 }
 
+.autresection{
+    justify-content: space-around;
+    align-items: center;
+    height: 600px;
+    width: 1200px;
+    background-color: rgba(245, 245, 245, 0.479);
+    margin: 0 auto;
+    display: flex;
 
+}
+
+
+
+.texte{
+    height: 550px;
+    width: 60%;
+    text-align: center;
+    padding-right: 2%;
+}
+
+p{
+    padding-top: 10%;
+    font-size: larger;
+}
+
+h4{
+    font-size: 2.5rem;
+}
+
+.scroll{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 7px;
+    z-index: 1;
+    background-color: #981cb4;
+}
+
+.sct4{
+    width: 100vw;
+    height: 100vh;
+    background: url(img/BG.jpg);
+    background-size: cover;
+}
+
+.block-title{
+    background-color: rgba(245, 245, 245, 0.479);
+    height: 300px;
+    width: 700px;
+    margin: 0 auto;
+}
+
+.sct4, h1{
+    text-align: center;
+    padding-top: 18%;
+}
